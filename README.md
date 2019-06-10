@@ -3,7 +3,7 @@
 Lädt öffentliche Dokumente aus dem Rösrather Ratsinformationssystem http://ratsinfo.roesrath.de/ratsinfo/roesrath/
 für die lokale Archivierung, bessere Durchsuchbarkeit und ähnliche Zwecke.
 
-## Anwendung
+## Installation
 
 ```nohighlight
 git clone https://github.com/gruene-roesrath/ris-scraper.git
@@ -12,6 +12,14 @@ virtualenv venv -p python3
 source venv/bin/activate
 pip install -r requirements.txt
 
+python scrape.py
+```
+
+## Anwendung
+
+### Dokumente herunterladen
+
+```nohighlight
 python scrape.py
 ```
 
@@ -25,3 +33,9 @@ benannt ist. Diese Nummer entspricht der, die in der URL der Detailseite in
 diesem Format verwendet wird:
 
     http://ratsinfo.roesrath.de/ratsinfo/roesrath/Proposal.html?select=<nummer>
+
+### Volltext-Extraction
+
+```nohighlight
+python extract_text.py
+```
