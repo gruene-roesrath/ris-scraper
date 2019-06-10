@@ -34,8 +34,25 @@ diesem Format verwendet wird:
 
     http://ratsinfo.roesrath.de/ratsinfo/roesrath/Proposal.html?select=<nummer>
 
-### Volltext-Extraction
+### Volltext-Extraktion
+
+Dies vearbeitet die herunter geladenen Dokumente und extrahiert ihre Inhalte
+in einfach weiterverwendbare Textdateien.
+
+PDFs, die ausschließlich aus Scans bestehen, werden mit Texterkennung (OCR)
+verarbeitet.
 
 ```nohighlight
 python extract_text.py
+```
+
+### Indexierung
+
+Dieses Script verarbeitet die zuvor gesammelten Volltexte und schreibt sie,
+zusammen mit Metadaten zu den PDF-Dokumenten, in eine Elasticsearch-Datenbank.
+Diese Datenbank kann dnn für Suchabfragen genutzt werden.
+
+```nohighlight
+docker-compose up -d
+python index.py
 ```
