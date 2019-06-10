@@ -1,6 +1,6 @@
 # ris-scraper
 
-Lädt öffentliche Dokumente aus dem Rösrather Ratsinformationssystem http://ratsinfo.roesrath.de/ratsinfo/roesrath/
+Lädt öffentliche Dokumente aus dem Rösrather Ratsinformationssystem http://ratsinfo.roesrath.de/ratsinfo/roesrath
 für die lokale Archivierung, bessere Durchsuchbarkeit und ähnliche Zwecke.
 
 ## Installation
