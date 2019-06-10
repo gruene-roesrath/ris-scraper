@@ -84,14 +84,17 @@ if __name__ == "__main__":
     # collect 3 years back and 100 days forward
     now = datetime.now()
     start = now - timedelta(days=365*3)
-    end = now - timedelta(days=365)
+    end = now + timedelta(days=100)
     date = start
     lastmonth = None
+
     while date < end:
         date += timedelta(days=1)
         year = datetime.strftime(date, "%Y")
         month = int(datetime.strftime(date, "%m")) - 1
+        
         if month != lastmonth:
             print(year, month)
             lastmonth = month
+
             collect_meetings(year, month)
