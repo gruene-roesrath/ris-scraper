@@ -13,6 +13,8 @@ basepath = "/ratsinfo/roesrath"
 
 meetings_url = "%s%s/Meeting.html" % (baseurl, basepath)
 
+documents_path = os.getenv('DOCUMENTS_PATH', default='./documents')
+
 # scraper start date for the meeting calendar
 start = datetime(2006, 2, 1, 0, 0, 0)
 
@@ -70,7 +72,7 @@ def get_document(browser, url):
         if match is not None:
             filename, headers = browser.retrieve(baseurl + link.url)
 
-            target_path = "./documents/" + match.group(1)
+            target_path = os.path.join(documents_path, match.group(1))
             os.makedirs(target_path, exist_ok=True)
 
             disp = headers["Content-Disposition"]
