@@ -13,6 +13,8 @@ basepath = "/ratsinfo/roesrath"
 
 meetings_url = "%s%s/Meeting.html" % (baseurl, basepath)
 
+# scraper start date for the meeting calendar
+start = datetime(2006, 2, 1, 0, 0, 0)
 
 def collect_meetings(year, month):
     """
@@ -83,7 +85,6 @@ def get_document(browser, url):
 if __name__ == "__main__":
     # collect 3 years back and 100 days forward
     now = datetime.now()
-    start = now - timedelta(days=365*3)
     end = now + timedelta(days=100)
     date = start
     lastmonth = None
